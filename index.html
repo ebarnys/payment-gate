@@ -512,6 +512,25 @@
       .headline { font-size: 22px; }
       .logo { height: 54px; margin: 0 auto; }
     }
+
+    @media (max-width: 600px) {
+      /* Coin rows — stack badge above price on mobile */
+      .coin-name { font-size: 20px; }
+      .coin-price-block {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 3px;
+      }
+      .coin-price-text { text-align: right; }
+
+      /* VIP plan rows — stack badge above price on mobile */
+      .plan-price-block {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 3px;
+      }
+      .badge--best { align-self: flex-end; }
+    }
   </style>
 </head>
 <body>
