@@ -148,15 +148,16 @@
     .coin-name { font-size: 25px; font-weight: 800; color: var(--text-1); line-height: 1; }
     .coin-name span { font-size: 15px; }
     .badge {
-      font-size: 12px; font-weight: 700;
-      padding: 0 9px; height: 20px;
+      font-size: 11px; font-weight: 700;
+      padding: 0 8px; height: 20px; gap: 4px;
       border-radius: 4px; display: inline-flex; align-items: center;
       white-space: nowrap; flex-shrink: 0;
     }
+    .badge img { width: 11px; height: 11px; display: block; flex-shrink: 0; }
     .badge--mega { background: #ffe100; color: #252525; }
     .badge--best-coin {
       background: linear-gradient(90deg,var(--orange-a),var(--orange-b));
-      border: 1px solid var(--orange-a); color: #fff;
+      color: #fff;
     }
     .coin-price-block {
       display: flex; align-items: center; gap: 12px;
@@ -209,12 +210,13 @@
     }
     .badge--best {
       font-size: 11px; font-weight: 700;
-      padding: 0 6px; height: 18px;
+      padding: 0 8px; height: 20px; gap: 4px;
       border-radius: 4px; display: inline-flex; align-items: center;
       background: linear-gradient(90deg,var(--orange-a),var(--orange-b));
       border: 1px solid var(--orange-a);
-      color: #fff; white-space: nowrap;
+      color: #fff; white-space: nowrap; flex-shrink: 0;
     }
+    .badge--best img { width: 11px; height: 11px; display: block; flex-shrink: 0; }
     .plan-price { font-size: 16px; font-weight: 800; white-space: nowrap; }
 
     /* ══════════════════════════════════════
@@ -578,7 +580,7 @@
           <div class="coin-name">5550 <span>COINS</span></div>
         </div>
         <div class="coin-price-block">
-          <span class="badge badge--mega">💣 MEGA PACKAGE</span>
+          <span class="badge badge--mega"><img src="assets/icon-bomb.png" alt="">Mega package</span>
           <div class="coin-price-text">
             <div class="coin-price og">349,99 €</div>
             <div class="coin-per">1 coin = 0,06 €</div>
@@ -594,7 +596,7 @@
           <div class="coin-name">1450 <span>COINS</span></div>
         </div>
         <div class="coin-price-block">
-          <span class="badge badge--best-coin">🔥 BEST OFFER</span>
+          <span class="badge badge--best-coin"><img src="assets/icon-star-offer.png" alt="">Best offer</span>
           <div class="coin-price-text">
             <div class="coin-price og">99,99 €</div>
             <div class="coin-per">1 coin = 0,07 €</div>
@@ -815,7 +817,7 @@
           </div>
         </div>
         <div class="plan-price-block">
-          <span class="badge--best">🔥 BEST VALUE</span>
+          <span class="badge--best"><img src="assets/icon-star-value.png" alt="">Best value</span>
           <div class="plan-price og">*19,90 €</div>
         </div>
       </div>
