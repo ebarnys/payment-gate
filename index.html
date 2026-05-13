@@ -412,6 +412,83 @@
     }
     .qr-lbl { font-family:'Inter',sans-serif; font-size:11px; color:var(--text-3); text-align:center; }
 
+    /* Enhanced bank transfer */
+    .bank-qr-header {
+      font-size: 14px; font-weight: 700; text-align: center;
+      color: var(--text-1); margin-bottom: 5px;
+    }
+    .bank-qr-sub {
+      font-family: 'Inter', sans-serif; font-size: 11px;
+      color: var(--text-3); text-align: center;
+      margin-bottom: 10px; line-height: 1.4;
+    }
+    .bank-or {
+      display: flex; align-items: center; gap: 8px;
+      margin: 10px 0; font-family: 'Inter', sans-serif;
+      font-size: 11px; color: var(--text-3); font-weight: 600;
+    }
+    .bank-or::before, .bank-or::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .bank-manual-intro {
+      font-family: 'Inter', sans-serif; font-size: 11px;
+      color: var(--text-3); text-align: center;
+      margin-bottom: 10px; line-height: 1.4;
+    }
+    .bank-fields { margin-bottom: 6px; }
+    .bank-field-row {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 0; border-bottom: 1px solid var(--border);
+      font-family: 'Inter', sans-serif; font-size: 12px;
+    }
+    .bank-field-row:last-child { border-bottom: none; }
+    .bank-field-lbl { color: var(--text-3); flex: 0 0 120px; font-size: 11px; }
+    .bank-field-val { color: var(--text-1); font-weight: 700; flex: 1; word-break: break-all; }
+    .copy-btn {
+      background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 2px 7px; cursor: pointer;
+      color: var(--text-3); font-size: 12px; flex-shrink: 0;
+      transition: all .15s; line-height: 1;
+    }
+    .copy-btn:hover { border-color: var(--orange-border); color: var(--orange-border); }
+    .copy-btn.copied { border-color: var(--green-a); color: var(--green-a); }
+    .bank-mandatory-note {
+      font-family: 'Inter', sans-serif; font-size: 10px;
+      color: var(--orange-border); margin: 6px 0 3px;
+    }
+    .bank-tip-note {
+      font-family: 'Inter', sans-serif; font-size: 10px;
+      color: var(--text-3); margin-bottom: 10px;
+    }
+    .bank-email-label {
+      font-family: 'Inter', sans-serif; font-size: 11px;
+      color: var(--text-3); margin-bottom: 5px;
+    }
+    .bank-email-row { display: flex; gap: 5px; margin-bottom: 8px; }
+    .bank-email-row .finput { flex: 1; height: 32px; font-size: 12px; }
+    .bank-action-btn {
+      height: 32px; padding: 0 12px; border: none;
+      border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px; font-weight: 700; cursor: pointer; flex-shrink: 0;
+      transition: opacity .15s;
+    }
+    .bank-action-btn:hover { opacity: .88; }
+    .bank-action-btn--send {
+      background: linear-gradient(90deg, var(--green-a), var(--green-b)); color: #fff;
+    }
+    .bank-action-btn--print {
+      background: linear-gradient(90deg, #3875d9, #2960c0); color: #fff;
+    }
+    .bank-paid-btn {
+      width: 100%; height: 42px;
+      background: linear-gradient(90deg, var(--orange-a), var(--orange-b));
+      border: none; border-radius: 8px; color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px; font-weight: 700; cursor: pointer;
+      transition: opacity .15s; margin-top: 2px;
+    }
+    .bank-paid-btn:hover { opacity: .9; }
+
     /* Apple Pay */
     .apple-view { display: none; text-align: center; }
     .apple-intro {
@@ -713,18 +790,66 @@
 
         <!-- Bank transfer -->
         <div id="c-f-bank" class="bank-view">
-          <div class="bank-notice">⏱ Please complete the transfer within <strong>48 hours</strong>. Your coins will be credited automatically after payment confirmation.</div>
-          <div class="bank-box">
-            <div class="bank-row"><span class="bank-lbl">Recipient</span><span class="bank-val">CB Media Ltd.</span></div>
-            <div class="bank-row"><span class="bank-lbl">IBAN</span><span class="bank-val">GB82 WEST 1234 5698 7654 32</span></div>
-            <div class="bank-row"><span class="bank-lbl">BIC / SWIFT</span><span class="bank-val">WESTGB22</span></div>
-            <div class="bank-row"><span class="bank-lbl">Amount</span><span class="bank-val og" id="c-b-amount">19,99 €</span></div>
-            <div class="bank-row"><span class="bank-lbl">Reference</span><span class="bank-val" style="font-family:monospace;font-size:11px">SK-225-20260430</span></div>
-          </div>
+          <p class="bank-qr-header">For payment open your banking application</p>
+          <p class="bank-qr-sub">Scan this QR code via your banking application to initiate the payment.</p>
           <div class="qr-wrap">
             <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"><rect width="140" height="140" fill="white"/><rect x="10" y="10" width="35" height="35" fill="#171c26"/><rect x="15" y="15" width="25" height="25" fill="white"/><rect x="20" y="20" width="15" height="15" fill="#171c26"/><rect x="95" y="10" width="35" height="35" fill="#171c26"/><rect x="100" y="15" width="25" height="25" fill="white"/><rect x="105" y="20" width="15" height="15" fill="#171c26"/><rect x="10" y="95" width="35" height="35" fill="#171c26"/><rect x="15" y="100" width="25" height="25" fill="white"/><rect x="20" y="105" width="15" height="15" fill="#171c26"/><rect x="50" y="10" width="5" height="5" fill="#171c26"/><rect x="60" y="10" width="5" height="5" fill="#171c26"/><rect x="75" y="10" width="5" height="5" fill="#171c26"/><rect x="85" y="10" width="5" height="5" fill="#171c26"/><rect x="55" y="20" width="5" height="5" fill="#171c26"/><rect x="70" y="20" width="5" height="5" fill="#171c26"/><rect x="80" y="20" width="5" height="5" fill="#171c26"/><rect x="50" y="30" width="5" height="5" fill="#171c26"/><rect x="65" y="30" width="5" height="5" fill="#171c26"/><rect x="80" y="30" width="5" height="5" fill="#171c26"/><rect x="60" y="40" width="5" height="5" fill="#171c26"/><rect x="75" y="40" width="5" height="5" fill="#171c26"/><rect x="10" y="50" width="5" height="5" fill="#171c26"/><rect x="25" y="50" width="5" height="5" fill="#171c26"/><rect x="40" y="50" width="5" height="5" fill="#171c26"/><rect x="55" y="50" width="5" height="5" fill="#171c26"/><rect x="70" y="50" width="5" height="5" fill="#171c26"/><rect x="85" y="50" width="5" height="5" fill="#171c26"/><rect x="100" y="50" width="5" height="5" fill="#171c26"/><rect x="115" y="50" width="5" height="5" fill="#171c26"/><rect x="125" y="50" width="5" height="5" fill="#171c26"/><rect x="15" y="60" width="5" height="5" fill="#171c26"/><rect x="35" y="60" width="5" height="5" fill="#171c26"/><rect x="50" y="60" width="5" height="5" fill="#171c26"/><rect x="65" y="60" width="5" height="5" fill="#171c26"/><rect x="80" y="60" width="5" height="5" fill="#171c26"/><rect x="95" y="60" width="5" height="5" fill="#171c26"/><rect x="110" y="60" width="5" height="5" fill="#171c26"/><rect x="125" y="60" width="5" height="5" fill="#171c26"/><rect x="10" y="70" width="5" height="5" fill="#171c26"/><rect x="30" y="70" width="5" height="5" fill="#171c26"/><rect x="45" y="70" width="5" height="5" fill="#171c26"/><rect x="60" y="70" width="5" height="5" fill="#171c26"/><rect x="75" y="70" width="5" height="5" fill="#171c26"/><rect x="90" y="70" width="5" height="5" fill="#171c26"/><rect x="105" y="70" width="5" height="5" fill="#171c26"/><rect x="120" y="70" width="5" height="5" fill="#171c26"/><rect x="20" y="80" width="5" height="5" fill="#171c26"/><rect x="35" y="80" width="5" height="5" fill="#171c26"/><rect x="55" y="80" width="5" height="5" fill="#171c26"/><rect x="70" y="80" width="5" height="5" fill="#171c26"/><rect x="85" y="80" width="5" height="5" fill="#171c26"/><rect x="100" y="80" width="5" height="5" fill="#171c26"/><rect x="120" y="80" width="5" height="5" fill="#171c26"/><rect x="50" y="95" width="5" height="5" fill="#171c26"/><rect x="65" y="95" width="5" height="5" fill="#171c26"/><rect x="80" y="95" width="5" height="5" fill="#171c26"/><rect x="100" y="95" width="5" height="5" fill="#171c26"/><rect x="115" y="95" width="5" height="5" fill="#171c26"/><rect x="125" y="95" width="5" height="5" fill="#171c26"/><rect x="55" y="105" width="5" height="5" fill="#171c26"/><rect x="70" y="105" width="5" height="5" fill="#171c26"/><rect x="85" y="105" width="5" height="5" fill="#171c26"/><rect x="110" y="105" width="5" height="5" fill="#171c26"/><rect x="50" y="115" width="5" height="5" fill="#171c26"/><rect x="65" y="115" width="5" height="5" fill="#171c26"/><rect x="80" y="115" width="5" height="5" fill="#171c26"/><rect x="95" y="115" width="5" height="5" fill="#171c26"/><rect x="115" y="115" width="5" height="5" fill="#171c26"/><rect x="125" y="115" width="5" height="5" fill="#171c26"/><rect x="55" y="125" width="5" height="5" fill="#171c26"/><rect x="70" y="125" width="5" height="5" fill="#171c26"/><rect x="90" y="125" width="5" height="5" fill="#171c26"/><rect x="105" y="125" width="5" height="5" fill="#171c26"/><rect x="120" y="125" width="5" height="5" fill="#171c26"/></svg>
-            <span class="qr-lbl">Scan to pay · or use bank details above</span>
+            <span class="qr-lbl">Pay with QR Code</span>
           </div>
+          <div class="bank-or">OR</div>
+          <p class="bank-manual-intro">Manually complete an instant bank transfer with the following information.</p>
+          <div class="bank-fields">
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Bank</span>
+              <span class="bank-field-val">Barclays Bank</span>
+              <button class="copy-btn" onclick="copyField(this,'Barclays Bank')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Account holder</span>
+              <span class="bank-field-val">Velvet Digital Ltd.</span>
+              <button class="copy-btn" onclick="copyField(this,'Velvet Digital Ltd.')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Account number</span>
+              <span class="bank-field-val">12345678</span>
+              <button class="copy-btn" onclick="copyField(this,'12345678')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Sort code</span>
+              <span class="bank-field-val">20-12-34</span>
+              <button class="copy-btn" onclick="copyField(this,'20-12-34')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">IBAN</span>
+              <span class="bank-field-val">GB82 WEST 1234 5698 7654 32</span>
+              <button class="copy-btn" onclick="copyField(this,'GB82 WEST 1234 5698 7654 32')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">BIC / SWIFT</span>
+              <span class="bank-field-val">WESTGB22</span>
+              <button class="copy-btn" onclick="copyField(this,'WESTGB22')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Amount</span>
+              <span class="bank-field-val og" id="c-b-amount">19,99 €</span>
+              <button class="copy-btn" onclick="copyField(this,document.getElementById('c-b-amount').textContent)">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">* Reference (mandatory)</span>
+              <span class="bank-field-val" id="c-b-ref" style="font-family:monospace;font-size:11px">SK-225-20260513</span>
+              <button class="copy-btn" onclick="copyField(this,document.getElementById('c-b-ref').textContent)">&#10697;</button>
+            </div>
+          </div>
+          <p class="bank-mandatory-note">* Mandatory information for processing your payment</p>
+          <p class="bank-tip-note">Tip: Use the copy button to avoid errors</p>
+          <p class="bank-email-label">Send payment details to email</p>
+          <div class="bank-email-row">
+            <input class="finput" type="email" placeholder="your@email.com">
+            <button class="bank-action-btn bank-action-btn--send">SEND</button>
+            <button class="bank-action-btn bank-action-btn--print" onclick="window.print()">PRINT</button>
+          </div>
+          <button class="bank-paid-btn" onclick="coinHandlePay()">Already paid? Click here</button>
+          <p style="font-family:'Inter',sans-serif;font-size:10px;color:var(--text-3);margin-top:8px;line-height:1.4;">Your credits will be credited automatically after payment confirmation.</p>
         </div>
 
         <!-- Apple Pay -->
@@ -944,18 +1069,66 @@
 
         <!-- Bank transfer -->
         <div id="c2-f-bank" class="bank-view">
-          <div class="bank-notice">⏱ Please complete the transfer within <strong>48 hours</strong>. Your coins will be credited automatically after payment confirmation.</div>
-          <div class="bank-box">
-            <div class="bank-row"><span class="bank-lbl">Recipient</span><span class="bank-val">CB Media Ltd.</span></div>
-            <div class="bank-row"><span class="bank-lbl">IBAN</span><span class="bank-val">GB82 WEST 1234 5698 7654 32</span></div>
-            <div class="bank-row"><span class="bank-lbl">BIC / SWIFT</span><span class="bank-val">WESTGB22</span></div>
-            <div class="bank-row"><span class="bank-lbl">Amount</span><span class="bank-val og" id="c2-b-amount">19,99 €</span></div>
-            <div class="bank-row"><span class="bank-lbl">Reference</span><span class="bank-val" style="font-family:monospace;font-size:11px">SK-225-20260430</span></div>
-          </div>
+          <p class="bank-qr-header">For payment open your banking application</p>
+          <p class="bank-qr-sub">Scan this QR code via your banking application to initiate the payment.</p>
           <div class="qr-wrap">
             <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"><rect width="140" height="140" fill="white"/><rect x="10" y="10" width="35" height="35" fill="#171c26"/><rect x="15" y="15" width="25" height="25" fill="white"/><rect x="20" y="20" width="15" height="15" fill="#171c26"/><rect x="95" y="10" width="35" height="35" fill="#171c26"/><rect x="100" y="15" width="25" height="25" fill="white"/><rect x="105" y="20" width="15" height="15" fill="#171c26"/><rect x="10" y="95" width="35" height="35" fill="#171c26"/><rect x="15" y="100" width="25" height="25" fill="white"/><rect x="20" y="105" width="15" height="15" fill="#171c26"/><rect x="50" y="10" width="5" height="5" fill="#171c26"/><rect x="60" y="10" width="5" height="5" fill="#171c26"/><rect x="75" y="10" width="5" height="5" fill="#171c26"/><rect x="85" y="10" width="5" height="5" fill="#171c26"/><rect x="55" y="20" width="5" height="5" fill="#171c26"/><rect x="70" y="20" width="5" height="5" fill="#171c26"/><rect x="80" y="20" width="5" height="5" fill="#171c26"/><rect x="50" y="30" width="5" height="5" fill="#171c26"/><rect x="65" y="30" width="5" height="5" fill="#171c26"/><rect x="80" y="30" width="5" height="5" fill="#171c26"/><rect x="60" y="40" width="5" height="5" fill="#171c26"/><rect x="75" y="40" width="5" height="5" fill="#171c26"/><rect x="10" y="50" width="5" height="5" fill="#171c26"/><rect x="25" y="50" width="5" height="5" fill="#171c26"/><rect x="40" y="50" width="5" height="5" fill="#171c26"/><rect x="55" y="50" width="5" height="5" fill="#171c26"/><rect x="70" y="50" width="5" height="5" fill="#171c26"/><rect x="85" y="50" width="5" height="5" fill="#171c26"/><rect x="100" y="50" width="5" height="5" fill="#171c26"/><rect x="115" y="50" width="5" height="5" fill="#171c26"/><rect x="125" y="50" width="5" height="5" fill="#171c26"/><rect x="15" y="60" width="5" height="5" fill="#171c26"/><rect x="35" y="60" width="5" height="5" fill="#171c26"/><rect x="50" y="60" width="5" height="5" fill="#171c26"/><rect x="65" y="60" width="5" height="5" fill="#171c26"/><rect x="80" y="60" width="5" height="5" fill="#171c26"/><rect x="95" y="60" width="5" height="5" fill="#171c26"/><rect x="110" y="60" width="5" height="5" fill="#171c26"/><rect x="125" y="60" width="5" height="5" fill="#171c26"/><rect x="10" y="70" width="5" height="5" fill="#171c26"/><rect x="30" y="70" width="5" height="5" fill="#171c26"/><rect x="45" y="70" width="5" height="5" fill="#171c26"/><rect x="60" y="70" width="5" height="5" fill="#171c26"/><rect x="75" y="70" width="5" height="5" fill="#171c26"/><rect x="90" y="70" width="5" height="5" fill="#171c26"/><rect x="105" y="70" width="5" height="5" fill="#171c26"/><rect x="120" y="70" width="5" height="5" fill="#171c26"/><rect x="20" y="80" width="5" height="5" fill="#171c26"/><rect x="35" y="80" width="5" height="5" fill="#171c26"/><rect x="55" y="80" width="5" height="5" fill="#171c26"/><rect x="70" y="80" width="5" height="5" fill="#171c26"/><rect x="85" y="80" width="5" height="5" fill="#171c26"/><rect x="100" y="80" width="5" height="5" fill="#171c26"/><rect x="120" y="80" width="5" height="5" fill="#171c26"/><rect x="50" y="95" width="5" height="5" fill="#171c26"/><rect x="65" y="95" width="5" height="5" fill="#171c26"/><rect x="80" y="95" width="5" height="5" fill="#171c26"/><rect x="100" y="95" width="5" height="5" fill="#171c26"/><rect x="115" y="95" width="5" height="5" fill="#171c26"/><rect x="125" y="95" width="5" height="5" fill="#171c26"/><rect x="55" y="105" width="5" height="5" fill="#171c26"/><rect x="70" y="105" width="5" height="5" fill="#171c26"/><rect x="85" y="105" width="5" height="5" fill="#171c26"/><rect x="110" y="105" width="5" height="5" fill="#171c26"/><rect x="50" y="115" width="5" height="5" fill="#171c26"/><rect x="65" y="115" width="5" height="5" fill="#171c26"/><rect x="80" y="115" width="5" height="5" fill="#171c26"/><rect x="95" y="115" width="5" height="5" fill="#171c26"/><rect x="115" y="115" width="5" height="5" fill="#171c26"/><rect x="125" y="115" width="5" height="5" fill="#171c26"/><rect x="55" y="125" width="5" height="5" fill="#171c26"/><rect x="70" y="125" width="5" height="5" fill="#171c26"/><rect x="90" y="125" width="5" height="5" fill="#171c26"/><rect x="105" y="125" width="5" height="5" fill="#171c26"/><rect x="120" y="125" width="5" height="5" fill="#171c26"/></svg>
-            <span class="qr-lbl">Scan to pay · or use bank details above</span>
+            <span class="qr-lbl">Pay with QR Code</span>
           </div>
+          <div class="bank-or">OR</div>
+          <p class="bank-manual-intro">Manually complete an instant bank transfer with the following information.</p>
+          <div class="bank-fields">
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Bank</span>
+              <span class="bank-field-val">Barclays Bank</span>
+              <button class="copy-btn" onclick="copyField(this,'Barclays Bank')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Account holder</span>
+              <span class="bank-field-val">Velvet Digital Ltd.</span>
+              <button class="copy-btn" onclick="copyField(this,'Velvet Digital Ltd.')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Account number</span>
+              <span class="bank-field-val">12345678</span>
+              <button class="copy-btn" onclick="copyField(this,'12345678')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Sort code</span>
+              <span class="bank-field-val">20-12-34</span>
+              <button class="copy-btn" onclick="copyField(this,'20-12-34')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">IBAN</span>
+              <span class="bank-field-val">GB82 WEST 1234 5698 7654 32</span>
+              <button class="copy-btn" onclick="copyField(this,'GB82 WEST 1234 5698 7654 32')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">BIC / SWIFT</span>
+              <span class="bank-field-val">WESTGB22</span>
+              <button class="copy-btn" onclick="copyField(this,'WESTGB22')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Amount</span>
+              <span class="bank-field-val og" id="c2-b-amount">19,99 €</span>
+              <button class="copy-btn" onclick="copyField(this,document.getElementById('c2-b-amount').textContent)">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">* Reference (mandatory)</span>
+              <span class="bank-field-val" id="c2-b-ref" style="font-family:monospace;font-size:11px">SK-225-20260513</span>
+              <button class="copy-btn" onclick="copyField(this,document.getElementById('c2-b-ref').textContent)">&#10697;</button>
+            </div>
+          </div>
+          <p class="bank-mandatory-note">* Mandatory information for processing your payment</p>
+          <p class="bank-tip-note">Tip: Use the copy button to avoid errors</p>
+          <p class="bank-email-label">Send payment details to email</p>
+          <div class="bank-email-row">
+            <input class="finput" type="email" placeholder="your@email.com">
+            <button class="bank-action-btn bank-action-btn--send">SEND</button>
+            <button class="bank-action-btn bank-action-btn--print" onclick="window.print()">PRINT</button>
+          </div>
+          <button class="bank-paid-btn" onclick="coin2HandlePay()">Already paid? Click here</button>
+          <p style="font-family:'Inter',sans-serif;font-size:10px;color:var(--text-3);margin-top:8px;line-height:1.4;">Your credits will be credited automatically after payment confirmation.</p>
         </div>
 
         <!-- Apple Pay -->
@@ -1168,18 +1341,66 @@
 
         <!-- Bank transfer -->
         <div id="v-f-bank" class="bank-view">
-          <div class="bank-notice">⏱ Please complete the transfer within <strong>48 hours</strong>. Your VIP membership will be activated automatically after payment confirmation.</div>
-          <div class="bank-box">
-            <div class="bank-row"><span class="bank-lbl">Recipient</span><span class="bank-val">CB Media Ltd.</span></div>
-            <div class="bank-row"><span class="bank-lbl">IBAN</span><span class="bank-val">GB82 WEST 1234 5698 7654 32</span></div>
-            <div class="bank-row"><span class="bank-lbl">BIC / SWIFT</span><span class="bank-val">WESTGB22</span></div>
-            <div class="bank-row"><span class="bank-lbl">Amount</span><span class="bank-val og" id="v-b-amount">39,90 €</span></div>
-            <div class="bank-row"><span class="bank-lbl">Reference</span><span class="bank-val" style="font-family:monospace;font-size:11px" id="v-b-ref">VIP-1M-20260430</span></div>
-          </div>
+          <p class="bank-qr-header">For payment open your banking application</p>
+          <p class="bank-qr-sub">Scan this QR code via your banking application to initiate the payment.</p>
           <div class="qr-wrap">
             <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"><rect width="140" height="140" fill="white"/><rect x="10" y="10" width="35" height="35" fill="#171c26"/><rect x="15" y="15" width="25" height="25" fill="white"/><rect x="20" y="20" width="15" height="15" fill="#171c26"/><rect x="95" y="10" width="35" height="35" fill="#171c26"/><rect x="100" y="15" width="25" height="25" fill="white"/><rect x="105" y="20" width="15" height="15" fill="#171c26"/><rect x="10" y="95" width="35" height="35" fill="#171c26"/><rect x="15" y="100" width="25" height="25" fill="white"/><rect x="20" y="105" width="15" height="15" fill="#171c26"/><rect x="50" y="10" width="5" height="5" fill="#171c26"/><rect x="60" y="10" width="5" height="5" fill="#171c26"/><rect x="75" y="10" width="5" height="5" fill="#171c26"/><rect x="85" y="10" width="5" height="5" fill="#171c26"/><rect x="55" y="20" width="5" height="5" fill="#171c26"/><rect x="70" y="20" width="5" height="5" fill="#171c26"/><rect x="80" y="20" width="5" height="5" fill="#171c26"/><rect x="50" y="30" width="5" height="5" fill="#171c26"/><rect x="65" y="30" width="5" height="5" fill="#171c26"/><rect x="80" y="30" width="5" height="5" fill="#171c26"/><rect x="60" y="40" width="5" height="5" fill="#171c26"/><rect x="75" y="40" width="5" height="5" fill="#171c26"/><rect x="10" y="50" width="5" height="5" fill="#171c26"/><rect x="25" y="50" width="5" height="5" fill="#171c26"/><rect x="40" y="50" width="5" height="5" fill="#171c26"/><rect x="55" y="50" width="5" height="5" fill="#171c26"/><rect x="70" y="50" width="5" height="5" fill="#171c26"/><rect x="85" y="50" width="5" height="5" fill="#171c26"/><rect x="100" y="50" width="5" height="5" fill="#171c26"/><rect x="115" y="50" width="5" height="5" fill="#171c26"/><rect x="125" y="50" width="5" height="5" fill="#171c26"/><rect x="15" y="60" width="5" height="5" fill="#171c26"/><rect x="35" y="60" width="5" height="5" fill="#171c26"/><rect x="50" y="60" width="5" height="5" fill="#171c26"/><rect x="65" y="60" width="5" height="5" fill="#171c26"/><rect x="80" y="60" width="5" height="5" fill="#171c26"/><rect x="95" y="60" width="5" height="5" fill="#171c26"/><rect x="110" y="60" width="5" height="5" fill="#171c26"/><rect x="125" y="60" width="5" height="5" fill="#171c26"/><rect x="10" y="70" width="5" height="5" fill="#171c26"/><rect x="30" y="70" width="5" height="5" fill="#171c26"/><rect x="45" y="70" width="5" height="5" fill="#171c26"/><rect x="60" y="70" width="5" height="5" fill="#171c26"/><rect x="75" y="70" width="5" height="5" fill="#171c26"/><rect x="90" y="70" width="5" height="5" fill="#171c26"/><rect x="105" y="70" width="5" height="5" fill="#171c26"/><rect x="120" y="70" width="5" height="5" fill="#171c26"/><rect x="20" y="80" width="5" height="5" fill="#171c26"/><rect x="35" y="80" width="5" height="5" fill="#171c26"/><rect x="55" y="80" width="5" height="5" fill="#171c26"/><rect x="70" y="80" width="5" height="5" fill="#171c26"/><rect x="85" y="80" width="5" height="5" fill="#171c26"/><rect x="100" y="80" width="5" height="5" fill="#171c26"/><rect x="120" y="80" width="5" height="5" fill="#171c26"/><rect x="50" y="95" width="5" height="5" fill="#171c26"/><rect x="65" y="95" width="5" height="5" fill="#171c26"/><rect x="80" y="95" width="5" height="5" fill="#171c26"/><rect x="100" y="95" width="5" height="5" fill="#171c26"/><rect x="115" y="95" width="5" height="5" fill="#171c26"/><rect x="125" y="95" width="5" height="5" fill="#171c26"/><rect x="55" y="105" width="5" height="5" fill="#171c26"/><rect x="70" y="105" width="5" height="5" fill="#171c26"/><rect x="85" y="105" width="5" height="5" fill="#171c26"/><rect x="110" y="105" width="5" height="5" fill="#171c26"/><rect x="50" y="115" width="5" height="5" fill="#171c26"/><rect x="65" y="115" width="5" height="5" fill="#171c26"/><rect x="80" y="115" width="5" height="5" fill="#171c26"/><rect x="95" y="115" width="5" height="5" fill="#171c26"/><rect x="115" y="115" width="5" height="5" fill="#171c26"/><rect x="125" y="115" width="5" height="5" fill="#171c26"/><rect x="55" y="125" width="5" height="5" fill="#171c26"/><rect x="70" y="125" width="5" height="5" fill="#171c26"/><rect x="90" y="125" width="5" height="5" fill="#171c26"/><rect x="105" y="125" width="5" height="5" fill="#171c26"/><rect x="120" y="125" width="5" height="5" fill="#171c26"/></svg>
-            <span class="qr-lbl">Scan to pay · or use bank details above</span>
+            <span class="qr-lbl">Pay with QR Code</span>
           </div>
+          <div class="bank-or">OR</div>
+          <p class="bank-manual-intro">Manually complete an instant bank transfer with the following information.</p>
+          <div class="bank-fields">
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Bank</span>
+              <span class="bank-field-val">Barclays Bank</span>
+              <button class="copy-btn" onclick="copyField(this,'Barclays Bank')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Account holder</span>
+              <span class="bank-field-val">Velvet Digital Ltd.</span>
+              <button class="copy-btn" onclick="copyField(this,'Velvet Digital Ltd.')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Account number</span>
+              <span class="bank-field-val">12345678</span>
+              <button class="copy-btn" onclick="copyField(this,'12345678')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Sort code</span>
+              <span class="bank-field-val">20-12-34</span>
+              <button class="copy-btn" onclick="copyField(this,'20-12-34')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">IBAN</span>
+              <span class="bank-field-val">GB82 WEST 1234 5698 7654 32</span>
+              <button class="copy-btn" onclick="copyField(this,'GB82 WEST 1234 5698 7654 32')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">BIC / SWIFT</span>
+              <span class="bank-field-val">WESTGB22</span>
+              <button class="copy-btn" onclick="copyField(this,'WESTGB22')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Amount</span>
+              <span class="bank-field-val og" id="v-b-amount">39,90 €</span>
+              <button class="copy-btn" onclick="copyField(this,document.getElementById('v-b-amount').textContent)">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">* Reference (mandatory)</span>
+              <span class="bank-field-val" id="v-b-ref" style="font-family:monospace;font-size:11px">VIP-1M-20260513</span>
+              <button class="copy-btn" onclick="copyField(this,document.getElementById('v-b-ref').textContent)">&#10697;</button>
+            </div>
+          </div>
+          <p class="bank-mandatory-note">* Mandatory information for processing your payment</p>
+          <p class="bank-tip-note">Tip: Use the copy button to avoid errors</p>
+          <p class="bank-email-label">Send payment details to email</p>
+          <div class="bank-email-row">
+            <input class="finput" type="email" placeholder="your@email.com">
+            <button class="bank-action-btn bank-action-btn--send">SEND</button>
+            <button class="bank-action-btn bank-action-btn--print" onclick="window.print()">PRINT</button>
+          </div>
+          <button class="bank-paid-btn" onclick="vipHandlePay()">Already paid? Click here</button>
+          <p style="font-family:'Inter',sans-serif;font-size:10px;color:var(--text-3);margin-top:8px;line-height:1.4;">Your VIP membership will be activated automatically after payment confirmation.</p>
         </div>
 
         <!-- Apple Pay -->
@@ -1388,18 +1609,66 @@
 
         <!-- Bank transfer -->
         <div id="v2-f-bank" class="bank-view">
-          <div class="bank-notice">⏱ Please complete the transfer within <strong>48 hours</strong>. Your VIP membership will be activated automatically after payment confirmation.</div>
-          <div class="bank-box">
-            <div class="bank-row"><span class="bank-lbl">Recipient</span><span class="bank-val">CB Media Ltd.</span></div>
-            <div class="bank-row"><span class="bank-lbl">IBAN</span><span class="bank-val">GB82 WEST 1234 5698 7654 32</span></div>
-            <div class="bank-row"><span class="bank-lbl">BIC / SWIFT</span><span class="bank-val">WESTGB22</span></div>
-            <div class="bank-row"><span class="bank-lbl">Amount</span><span class="bank-val og" id="v2-b-amount">39,90 €</span></div>
-            <div class="bank-row"><span class="bank-lbl">Reference</span><span class="bank-val" style="font-family:monospace;font-size:11px" id="v2-b-ref">VIP-1M-20260430</span></div>
-          </div>
+          <p class="bank-qr-header">For payment open your banking application</p>
+          <p class="bank-qr-sub">Scan this QR code via your banking application to initiate the payment.</p>
           <div class="qr-wrap">
             <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"><rect width="140" height="140" fill="white"/><rect x="10" y="10" width="35" height="35" fill="#171c26"/><rect x="15" y="15" width="25" height="25" fill="white"/><rect x="20" y="20" width="15" height="15" fill="#171c26"/><rect x="95" y="10" width="35" height="35" fill="#171c26"/><rect x="100" y="15" width="25" height="25" fill="white"/><rect x="105" y="20" width="15" height="15" fill="#171c26"/><rect x="10" y="95" width="35" height="35" fill="#171c26"/><rect x="15" y="100" width="25" height="25" fill="white"/><rect x="20" y="105" width="15" height="15" fill="#171c26"/><rect x="50" y="10" width="5" height="5" fill="#171c26"/><rect x="60" y="10" width="5" height="5" fill="#171c26"/><rect x="75" y="10" width="5" height="5" fill="#171c26"/><rect x="85" y="10" width="5" height="5" fill="#171c26"/><rect x="55" y="20" width="5" height="5" fill="#171c26"/><rect x="70" y="20" width="5" height="5" fill="#171c26"/><rect x="80" y="20" width="5" height="5" fill="#171c26"/><rect x="50" y="30" width="5" height="5" fill="#171c26"/><rect x="65" y="30" width="5" height="5" fill="#171c26"/><rect x="80" y="30" width="5" height="5" fill="#171c26"/><rect x="60" y="40" width="5" height="5" fill="#171c26"/><rect x="75" y="40" width="5" height="5" fill="#171c26"/><rect x="10" y="50" width="5" height="5" fill="#171c26"/><rect x="25" y="50" width="5" height="5" fill="#171c26"/><rect x="40" y="50" width="5" height="5" fill="#171c26"/><rect x="55" y="50" width="5" height="5" fill="#171c26"/><rect x="70" y="50" width="5" height="5" fill="#171c26"/><rect x="85" y="50" width="5" height="5" fill="#171c26"/><rect x="100" y="50" width="5" height="5" fill="#171c26"/><rect x="115" y="50" width="5" height="5" fill="#171c26"/><rect x="125" y="50" width="5" height="5" fill="#171c26"/><rect x="15" y="60" width="5" height="5" fill="#171c26"/><rect x="35" y="60" width="5" height="5" fill="#171c26"/><rect x="50" y="60" width="5" height="5" fill="#171c26"/><rect x="65" y="60" width="5" height="5" fill="#171c26"/><rect x="80" y="60" width="5" height="5" fill="#171c26"/><rect x="95" y="60" width="5" height="5" fill="#171c26"/><rect x="110" y="60" width="5" height="5" fill="#171c26"/><rect x="125" y="60" width="5" height="5" fill="#171c26"/><rect x="10" y="70" width="5" height="5" fill="#171c26"/><rect x="30" y="70" width="5" height="5" fill="#171c26"/><rect x="45" y="70" width="5" height="5" fill="#171c26"/><rect x="60" y="70" width="5" height="5" fill="#171c26"/><rect x="75" y="70" width="5" height="5" fill="#171c26"/><rect x="90" y="70" width="5" height="5" fill="#171c26"/><rect x="105" y="70" width="5" height="5" fill="#171c26"/><rect x="120" y="70" width="5" height="5" fill="#171c26"/><rect x="20" y="80" width="5" height="5" fill="#171c26"/><rect x="35" y="80" width="5" height="5" fill="#171c26"/><rect x="55" y="80" width="5" height="5" fill="#171c26"/><rect x="70" y="80" width="5" height="5" fill="#171c26"/><rect x="85" y="80" width="5" height="5" fill="#171c26"/><rect x="100" y="80" width="5" height="5" fill="#171c26"/><rect x="120" y="80" width="5" height="5" fill="#171c26"/><rect x="50" y="95" width="5" height="5" fill="#171c26"/><rect x="65" y="95" width="5" height="5" fill="#171c26"/><rect x="80" y="95" width="5" height="5" fill="#171c26"/><rect x="100" y="95" width="5" height="5" fill="#171c26"/><rect x="115" y="95" width="5" height="5" fill="#171c26"/><rect x="125" y="95" width="5" height="5" fill="#171c26"/><rect x="55" y="105" width="5" height="5" fill="#171c26"/><rect x="70" y="105" width="5" height="5" fill="#171c26"/><rect x="85" y="105" width="5" height="5" fill="#171c26"/><rect x="110" y="105" width="5" height="5" fill="#171c26"/><rect x="50" y="115" width="5" height="5" fill="#171c26"/><rect x="65" y="115" width="5" height="5" fill="#171c26"/><rect x="80" y="115" width="5" height="5" fill="#171c26"/><rect x="95" y="115" width="5" height="5" fill="#171c26"/><rect x="115" y="115" width="5" height="5" fill="#171c26"/><rect x="125" y="115" width="5" height="5" fill="#171c26"/><rect x="55" y="125" width="5" height="5" fill="#171c26"/><rect x="70" y="125" width="5" height="5" fill="#171c26"/><rect x="90" y="125" width="5" height="5" fill="#171c26"/><rect x="105" y="125" width="5" height="5" fill="#171c26"/><rect x="120" y="125" width="5" height="5" fill="#171c26"/></svg>
-            <span class="qr-lbl">Scan to pay · or use bank details above</span>
+            <span class="qr-lbl">Pay with QR Code</span>
           </div>
+          <div class="bank-or">OR</div>
+          <p class="bank-manual-intro">Manually complete an instant bank transfer with the following information.</p>
+          <div class="bank-fields">
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Bank</span>
+              <span class="bank-field-val">Barclays Bank</span>
+              <button class="copy-btn" onclick="copyField(this,'Barclays Bank')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Account holder</span>
+              <span class="bank-field-val">Velvet Digital Ltd.</span>
+              <button class="copy-btn" onclick="copyField(this,'Velvet Digital Ltd.')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Account number</span>
+              <span class="bank-field-val">12345678</span>
+              <button class="copy-btn" onclick="copyField(this,'12345678')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Sort code</span>
+              <span class="bank-field-val">20-12-34</span>
+              <button class="copy-btn" onclick="copyField(this,'20-12-34')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">IBAN</span>
+              <span class="bank-field-val">GB82 WEST 1234 5698 7654 32</span>
+              <button class="copy-btn" onclick="copyField(this,'GB82 WEST 1234 5698 7654 32')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">BIC / SWIFT</span>
+              <span class="bank-field-val">WESTGB22</span>
+              <button class="copy-btn" onclick="copyField(this,'WESTGB22')">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">Amount</span>
+              <span class="bank-field-val og" id="v2-b-amount">39,90 €</span>
+              <button class="copy-btn" onclick="copyField(this,document.getElementById('v2-b-amount').textContent)">&#10697;</button>
+            </div>
+            <div class="bank-field-row">
+              <span class="bank-field-lbl">* Reference (mandatory)</span>
+              <span class="bank-field-val" id="v2-b-ref" style="font-family:monospace;font-size:11px">VIP-1M-20260513</span>
+              <button class="copy-btn" onclick="copyField(this,document.getElementById('v2-b-ref').textContent)">&#10697;</button>
+            </div>
+          </div>
+          <p class="bank-mandatory-note">* Mandatory information for processing your payment</p>
+          <p class="bank-tip-note">Tip: Use the copy button to avoid errors</p>
+          <p class="bank-email-label">Send payment details to email</p>
+          <div class="bank-email-row">
+            <input class="finput" type="email" placeholder="your@email.com">
+            <button class="bank-action-btn bank-action-btn--send">SEND</button>
+            <button class="bank-action-btn bank-action-btn--print" onclick="window.print()">PRINT</button>
+          </div>
+          <button class="bank-paid-btn" onclick="vip2HandlePay()">Already paid? Click here</button>
+          <p style="font-family:'Inter',sans-serif;font-size:10px;color:var(--text-3);margin-top:8px;line-height:1.4;">Your VIP membership will be activated automatically after payment confirmation.</p>
         </div>
 
         <!-- Apple Pay -->
@@ -1558,6 +1827,8 @@ function coinSelectCoin(row) {
   document.getElementById('c-s-coins').textContent = coinState.coins + ' CREDITS for';
   document.getElementById('c-s-price').textContent = coinState.price + ' €';
   document.getElementById('c-b-amount').textContent = coinState.price + ' €';
+  const d = new Date(); const ds = d.getFullYear().toString() + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0');
+  document.getElementById('c-b-ref').textContent = 'SK-' + coinState.coins + '-' + ds;
 }
 
 function coinSelectMethod(row) {
@@ -1576,7 +1847,7 @@ function coinSelectMethod(row) {
       anonNote.style.display = 'block'; break;
     case 'bank':
       document.getElementById('c-f-bank').style.display = 'block';
-      payBtn.textContent = 'I have completed the transfer ✓'; payBtn.style.display = 'block';
+      payBtn.style.display = 'none';
       anonNote.style.display = 'none'; break;
     case 'apple':
       document.getElementById('c-f-apple').style.display = 'block';
@@ -1677,7 +1948,7 @@ function vipSelectMethod(row) {
       anonNote.style.display = 'block'; fp.style.display = 'block'; break;
     case 'bank':
       document.getElementById('v-f-bank').style.display = 'block';
-      payBtn.textContent = 'I have completed the transfer ✓'; payBtn.style.display = 'block';
+      payBtn.style.display = 'none';
       anonNote.style.display = 'none'; fp.style.display = 'block'; break;
     case 'apple':
       document.getElementById('v-f-apple').style.display = 'block';
@@ -1747,6 +2018,8 @@ function coin2SelectCoin(row) {
   document.getElementById('c2-s-coins').textContent = coin2State.coins + ' CREDITS for';
   document.getElementById('c2-s-price').textContent = coin2State.price + ' €';
   document.getElementById('c2-b-amount').textContent = coin2State.price + ' €';
+  const d = new Date(); const ds = d.getFullYear().toString() + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0');
+  document.getElementById('c2-b-ref').textContent = 'SK-' + coin2State.coins + '-' + ds;
 }
 
 function coin2SelectMethod(row) {
@@ -1765,7 +2038,7 @@ function coin2SelectMethod(row) {
       anonNote.style.display = 'block'; break;
     case 'bank':
       document.getElementById('c2-f-bank').style.display = 'block';
-      payBtn.textContent = 'I have completed the transfer ✓'; payBtn.style.display = 'block';
+      payBtn.style.display = 'none';
       anonNote.style.display = 'none'; break;
     case 'apple':
       document.getElementById('c2-f-apple').style.display = 'block';
@@ -1863,7 +2136,7 @@ function vip2SelectMethod(row) {
       anonNote.style.display = 'block'; break;
     case 'bank':
       document.getElementById('v2-f-bank').style.display = 'block';
-      payBtn.textContent = 'I have completed the transfer ✓'; payBtn.style.display = 'block';
+      payBtn.style.display = 'none';
       anonNote.style.display = 'none'; break;
     case 'apple':
       document.getElementById('v2-f-apple').style.display = 'block';
@@ -1912,6 +2185,19 @@ document.getElementById('v2c-cvc').addEventListener('input', function() {
 document.getElementById('v2-sepa-iban').addEventListener('input', function() {
   this.value = this.value.toUpperCase().replace(/[^A-Z0-9 ]/g,'');
 });
+
+/* ══════════════════════════════════════
+   COPY FIELD HELPER
+══════════════════════════════════════ */
+function copyField(btn, text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+  document.body.removeChild(ta);
+  const orig = btn.textContent;
+  btn.textContent = '✓'; btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+}
 </script>
 </body>
 </html>
