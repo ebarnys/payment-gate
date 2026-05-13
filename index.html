@@ -580,7 +580,7 @@
            onclick="coinSelectCoin(this)">
         <img src="assets/coin-5550.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">5550 <span>COINS</span></div>
+          <div class="coin-name">5550 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <span class="badge badge--mega"><img src="assets/icon-bomb.svg" alt="">Mega package</span>
@@ -596,7 +596,7 @@
            onclick="coinSelectCoin(this)">
         <img src="assets/coin-1450.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">1450 <span>COINS</span></div>
+          <div class="coin-name">1450 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <span class="badge badge--best-coin"><img src="assets/icon-star-offer.svg" alt="">Best offer</span>
@@ -612,7 +612,7 @@
            onclick="coinSelectCoin(this)">
         <img src="assets/coin-625.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">625 <span>COINS</span></div>
+          <div class="coin-name">625 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <div class="coin-price-text">
@@ -627,7 +627,7 @@
            onclick="coinSelectCoin(this)">
         <img src="assets/coin-225.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">225 <span>COINS</span></div>
+          <div class="coin-name">225 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <div class="coin-price-text">
@@ -642,7 +642,7 @@
            onclick="coinSelectCoin(this)">
         <img src="assets/coin-80.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">80 <span>COINS</span></div>
+          <div class="coin-name">80 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <div class="coin-price-text">
@@ -652,7 +652,6 @@
         </div>
       </div>
 
-      <div class="footnote">* The amount marked with a star is valid for one month</div>
     </div>
 
     <!-- COL 2 — PAYMENT METHOD (COIN) -->
@@ -684,7 +683,7 @@
         <div class="order-summary-coin">
           <div class="order-line">
             <img id="c-s-icon" src="assets/coin-225.png" alt="">
-            <span id="c-s-coins">225 COINS for</span>
+            <span id="c-s-coins">225 CREDITS for</span>
           </div>
           <span class="order-price-coin og" id="c-s-price">19,99 €</span>
         </div>
@@ -812,7 +811,7 @@
            onclick="coin2SelectCoin(this)">
         <img src="assets/coin-5550.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">5550 <span>COINS</span></div>
+          <div class="coin-name">5550 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <span class="badge badge--mega"><img src="assets/icon-bomb.svg" alt="">Mega package</span>
@@ -828,7 +827,7 @@
            onclick="coin2SelectCoin(this)">
         <img src="assets/coin-1450.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">1450 <span>COINS</span></div>
+          <div class="coin-name">1450 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <span class="badge badge--best-coin"><img src="assets/icon-star-offer.svg" alt="">Best offer</span>
@@ -844,7 +843,7 @@
            onclick="coin2SelectCoin(this)">
         <img src="assets/coin-625.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">625 <span>COINS</span></div>
+          <div class="coin-name">625 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <div class="coin-price-text">
@@ -859,7 +858,7 @@
            onclick="coin2SelectCoin(this)">
         <img src="assets/coin-225.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">225 <span>COINS</span></div>
+          <div class="coin-name">225 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <div class="coin-price-text">
@@ -874,7 +873,7 @@
            onclick="coin2SelectCoin(this)">
         <img src="assets/coin-80.png" class="coin-icon" alt="">
         <div class="coin-info">
-          <div class="coin-name">80 <span>COINS</span></div>
+          <div class="coin-name">80 <span>CREDITS</span></div>
         </div>
         <div class="coin-price-block">
           <div class="coin-price-text">
@@ -884,7 +883,6 @@
         </div>
       </div>
 
-      <div class="footnote">* The amount marked with a star is valid for one month</div>
     </div>
 
     <!-- COL 2 — PAYMENT METHOD (COIN2) -->
@@ -916,7 +914,7 @@
         <div class="order-summary-coin">
           <div class="order-line">
             <img id="c2-s-icon" src="assets/coin-225.png" alt="">
-            <span id="c2-s-coins">225 COINS for</span>
+            <span id="c2-s-coins">225 CREDITS for</span>
           </div>
           <span class="order-price-coin og" id="c2-s-price">19,99 €</span>
         </div>
@@ -1557,7 +1555,7 @@ function coinSelectCoin(row) {
   coinState.price = row.dataset.price;
   coinState.icon  = row.dataset.icon;
   document.getElementById('c-s-icon').src = coinState.icon;
-  document.getElementById('c-s-coins').textContent = coinState.coins + ' COINS for';
+  document.getElementById('c-s-coins').textContent = coinState.coins + ' CREDITS for';
   document.getElementById('c-s-price').textContent = coinState.price + ' €';
   document.getElementById('c-b-amount').textContent = coinState.price + ' €';
 }
@@ -1746,7 +1744,7 @@ function coin2SelectCoin(row) {
   coin2State.price = row.dataset.price;
   coin2State.icon  = row.dataset.icon;
   document.getElementById('c2-s-icon').src = coin2State.icon;
-  document.getElementById('c2-s-coins').textContent = coin2State.coins + ' COINS for';
+  document.getElementById('c2-s-coins').textContent = coin2State.coins + ' CREDITS for';
   document.getElementById('c2-s-price').textContent = coin2State.price + ' €';
   document.getElementById('c2-b-amount').textContent = coin2State.price + ' €';
 }
