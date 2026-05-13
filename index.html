@@ -464,8 +464,12 @@
       font-family: 'Inter', sans-serif; font-size: 11px;
       color: var(--text-3); margin-bottom: 5px;
     }
+    .bank-email-display {
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      color: var(--text-1); padding: 7px 10px; background: #f8f9fb;
+      border: 1px solid var(--border); border-radius: 6px; margin-bottom: 6px;
+    }
     .bank-email-row { display: flex; gap: 5px; margin-bottom: 8px; }
-    .bank-email-row .finput { flex: 1; height: 32px; font-size: 12px; }
     .bank-action-btn {
       height: 32px; padding: 0 12px; border: none;
       border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;
@@ -843,13 +847,12 @@
           <p class="bank-mandatory-note">* Mandatory information for processing your payment</p>
           <p class="bank-tip-note">Tip: Use the copy button to avoid errors</p>
           <p class="bank-email-label">Send payment details to email</p>
+          <div class="bank-email-display">t.novak@intermaxgroup.com</div>
           <div class="bank-email-row">
-            <input class="finput" type="email" placeholder="your@email.com">
-            <button class="bank-action-btn bank-action-btn--send">SEND</button>
+            <button class="bank-action-btn bank-action-btn--send" style="flex:1">SEND</button>
             <button class="bank-action-btn bank-action-btn--print" onclick="window.print()">PRINT</button>
           </div>
           <button class="bank-paid-btn" onclick="coinHandlePay()">Already paid? Click here</button>
-          <p style="font-family:'Inter',sans-serif;font-size:10px;color:var(--text-3);margin-top:8px;line-height:1.4;">Your credits will be credited automatically after payment confirmation.</p>
         </div>
 
         <!-- Apple Pay -->
@@ -881,7 +884,7 @@
           <p class="anon-text">Your payment will appear as www.invoicehelp24.com on your bank statement.</p>
         </div>
 
-        <div class="checks">
+        <div class="checks" id="c-checks">
           <label class="chk-label" id="c-tc-label">
             <input type="checkbox" id="c-tc-chk">
             <span>I agree with <a href="#" class="tc-link" onclick="return false;">Terms &amp; Conditions</a></span>
@@ -1122,13 +1125,12 @@
           <p class="bank-mandatory-note">* Mandatory information for processing your payment</p>
           <p class="bank-tip-note">Tip: Use the copy button to avoid errors</p>
           <p class="bank-email-label">Send payment details to email</p>
+          <div class="bank-email-display">t.novak@intermaxgroup.com</div>
           <div class="bank-email-row">
-            <input class="finput" type="email" placeholder="your@email.com">
-            <button class="bank-action-btn bank-action-btn--send">SEND</button>
+            <button class="bank-action-btn bank-action-btn--send" style="flex:1">SEND</button>
             <button class="bank-action-btn bank-action-btn--print" onclick="window.print()">PRINT</button>
           </div>
           <button class="bank-paid-btn" onclick="coin2HandlePay()">Already paid? Click here</button>
-          <p style="font-family:'Inter',sans-serif;font-size:10px;color:var(--text-3);margin-top:8px;line-height:1.4;">Your credits will be credited automatically after payment confirmation.</p>
         </div>
 
         <!-- Apple Pay -->
@@ -1160,7 +1162,7 @@
           <p class="anon-text">Your payment will appear as www.invoicehelp24.com on your bank statement.</p>
         </div>
 
-        <div class="checks">
+        <div class="checks" id="c2-checks">
           <label class="chk-label" id="c2-tc-label">
             <input type="checkbox" id="c2-tc-chk">
             <span>I agree with <a href="#" class="tc-link" onclick="return false;">Terms &amp; Conditions</a></span>
@@ -1394,13 +1396,12 @@
           <p class="bank-mandatory-note">* Mandatory information for processing your payment</p>
           <p class="bank-tip-note">Tip: Use the copy button to avoid errors</p>
           <p class="bank-email-label">Send payment details to email</p>
+          <div class="bank-email-display">t.novak@intermaxgroup.com</div>
           <div class="bank-email-row">
-            <input class="finput" type="email" placeholder="your@email.com">
-            <button class="bank-action-btn bank-action-btn--send">SEND</button>
+            <button class="bank-action-btn bank-action-btn--send" style="flex:1">SEND</button>
             <button class="bank-action-btn bank-action-btn--print" onclick="window.print()">PRINT</button>
           </div>
           <button class="bank-paid-btn" onclick="vipHandlePay()">Already paid? Click here</button>
-          <p style="font-family:'Inter',sans-serif;font-size:10px;color:var(--text-3);margin-top:8px;line-height:1.4;">Your VIP membership will be activated automatically after payment confirmation.</p>
         </div>
 
         <!-- Apple Pay -->
@@ -1432,7 +1433,7 @@
           <p class="anon-text">Your payment will appear as www.invoicehelp24.com on your bank statement.</p>
         </div>
 
-        <div class="checks">
+        <div class="checks" id="v-checks">
           <label class="chk-label" id="v-tc-label">
             <input type="checkbox" id="v-tc-chk">
             <span>I agree with <a href="#" class="tc-link" onclick="return false;">Terms &amp; Conditions</a></span>
@@ -1662,13 +1663,12 @@
           <p class="bank-mandatory-note">* Mandatory information for processing your payment</p>
           <p class="bank-tip-note">Tip: Use the copy button to avoid errors</p>
           <p class="bank-email-label">Send payment details to email</p>
+          <div class="bank-email-display">t.novak@intermaxgroup.com</div>
           <div class="bank-email-row">
-            <input class="finput" type="email" placeholder="your@email.com">
-            <button class="bank-action-btn bank-action-btn--send">SEND</button>
+            <button class="bank-action-btn bank-action-btn--send" style="flex:1">SEND</button>
             <button class="bank-action-btn bank-action-btn--print" onclick="window.print()">PRINT</button>
           </div>
           <button class="bank-paid-btn" onclick="vip2HandlePay()">Already paid? Click here</button>
-          <p style="font-family:'Inter',sans-serif;font-size:10px;color:var(--text-3);margin-top:8px;line-height:1.4;">Your VIP membership will be activated automatically after payment confirmation.</p>
         </div>
 
         <!-- Apple Pay -->
@@ -1700,7 +1700,7 @@
           <p class="anon-text">Your payment will appear as www.invoicehelp24.com on your bank statement.</p>
         </div>
 
-        <div class="checks">
+        <div class="checks" id="v2-checks">
           <label class="chk-label" id="v2-tc-label">
             <input type="checkbox" id="v2-tc-chk">
             <span>I agree with <a href="#" class="tc-link" onclick="return false;">Terms &amp; Conditions</a></span>
@@ -1840,22 +1840,23 @@ function coinSelectMethod(row) {
   });
   const payBtn   = document.getElementById('c-pay-btn');
   const anonNote = document.getElementById('c-anon-notice');
+  const checks   = document.getElementById('c-checks');
   switch (coinState.method) {
     case 'card':
       document.getElementById('c-f-card').style.display = 'block';
       payBtn.textContent = 'Pay now'; payBtn.style.display = 'block';
-      anonNote.style.display = 'block'; break;
+      anonNote.style.display = 'block'; checks.style.display = 'block'; break;
     case 'bank':
       document.getElementById('c-f-bank').style.display = 'block';
       payBtn.style.display = 'none';
-      anonNote.style.display = 'none'; break;
+      anonNote.style.display = 'none'; checks.style.display = 'none'; break;
     case 'apple':
       document.getElementById('c-f-apple').style.display = 'block';
-      payBtn.style.display = 'none'; anonNote.style.display = 'block'; break;
+      payBtn.style.display = 'none'; anonNote.style.display = 'block'; checks.style.display = 'block'; break;
     case 'sepa':
       document.getElementById('c-f-sepa').style.display = 'block';
       payBtn.textContent = 'Pay now'; payBtn.style.display = 'block';
-      anonNote.style.display = 'block'; break;
+      anonNote.style.display = 'block'; checks.style.display = 'block'; break;
   }
 }
 
@@ -1941,22 +1942,23 @@ function vipSelectMethod(row) {
   const payBtn   = document.getElementById('v-pay-btn');
   const anonNote = document.getElementById('v-anon-notice');
   const fp       = document.getElementById('v-fine-print');
+  const checks   = document.getElementById('v-checks');
   switch (vipState.method) {
     case 'card':
       document.getElementById('v-f-card').style.display = 'block';
       payBtn.textContent = 'Activate VIP now'; payBtn.style.display = 'block';
-      anonNote.style.display = 'block'; fp.style.display = 'block'; break;
+      anonNote.style.display = 'block'; fp.style.display = 'block'; checks.style.display = 'block'; break;
     case 'bank':
       document.getElementById('v-f-bank').style.display = 'block';
       payBtn.style.display = 'none';
-      anonNote.style.display = 'none'; fp.style.display = 'block'; break;
+      anonNote.style.display = 'none'; fp.style.display = 'none'; checks.style.display = 'none'; break;
     case 'apple':
       document.getElementById('v-f-apple').style.display = 'block';
-      payBtn.style.display = 'none'; anonNote.style.display = 'block'; fp.style.display = 'block'; break;
+      payBtn.style.display = 'none'; anonNote.style.display = 'block'; fp.style.display = 'block'; checks.style.display = 'block'; break;
     case 'sepa':
       document.getElementById('v-f-sepa').style.display = 'block';
       payBtn.textContent = 'Activate VIP now'; payBtn.style.display = 'block';
-      anonNote.style.display = 'block'; fp.style.display = 'block'; break;
+      anonNote.style.display = 'block'; fp.style.display = 'block'; checks.style.display = 'block'; break;
   }
 }
 
@@ -2031,22 +2033,23 @@ function coin2SelectMethod(row) {
   });
   const payBtn   = document.getElementById('c2-pay-btn');
   const anonNote = document.getElementById('c2-anon-notice');
+  const checks   = document.getElementById('c2-checks');
   switch (coin2State.method) {
     case 'card':
       document.getElementById('c2-f-card').style.display = 'block';
       payBtn.textContent = 'Pay now'; payBtn.style.display = 'block';
-      anonNote.style.display = 'block'; break;
+      anonNote.style.display = 'block'; checks.style.display = 'block'; break;
     case 'bank':
       document.getElementById('c2-f-bank').style.display = 'block';
       payBtn.style.display = 'none';
-      anonNote.style.display = 'none'; break;
+      anonNote.style.display = 'none'; checks.style.display = 'none'; break;
     case 'apple':
       document.getElementById('c2-f-apple').style.display = 'block';
-      payBtn.style.display = 'none'; anonNote.style.display = 'block'; break;
+      payBtn.style.display = 'none'; anonNote.style.display = 'block'; checks.style.display = 'block'; break;
     case 'sepa':
       document.getElementById('c2-f-sepa').style.display = 'block';
       payBtn.textContent = 'Pay now'; payBtn.style.display = 'block';
-      anonNote.style.display = 'block'; break;
+      anonNote.style.display = 'block'; checks.style.display = 'block'; break;
   }
 }
 
@@ -2129,22 +2132,24 @@ function vip2SelectMethod(row) {
   });
   const payBtn   = document.getElementById('v2-pay-btn');
   const anonNote = document.getElementById('v2-anon-notice');
+  const checks   = document.getElementById('v2-checks');
+  const fp       = document.getElementById('v2-fine-print');
   switch (vip2State.method) {
     case 'card':
       document.getElementById('v2-f-card').style.display = 'block';
       payBtn.textContent = 'Activate VIP now'; payBtn.style.display = 'block';
-      anonNote.style.display = 'block'; break;
+      anonNote.style.display = 'block'; checks.style.display = 'block'; fp.style.display = 'block'; break;
     case 'bank':
       document.getElementById('v2-f-bank').style.display = 'block';
       payBtn.style.display = 'none';
-      anonNote.style.display = 'none'; break;
+      anonNote.style.display = 'none'; checks.style.display = 'none'; fp.style.display = 'none'; break;
     case 'apple':
       document.getElementById('v2-f-apple').style.display = 'block';
-      payBtn.style.display = 'none'; anonNote.style.display = 'block'; break;
+      payBtn.style.display = 'none'; anonNote.style.display = 'block'; checks.style.display = 'block'; fp.style.display = 'block'; break;
     case 'sepa':
       document.getElementById('v2-f-sepa').style.display = 'block';
       payBtn.textContent = 'Activate VIP now'; payBtn.style.display = 'block';
-      anonNote.style.display = 'block'; break;
+      anonNote.style.display = 'block'; checks.style.display = 'block'; fp.style.display = 'block'; break;
   }
 }
 
