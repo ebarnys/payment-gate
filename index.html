@@ -1534,7 +1534,7 @@
    TOGGLE GATE
 ══════════════════════════════════════ */
 function showGate(gate) {
-  ['coin','coin2','vip','vip2'].forEach(g => {
+  ['coin','vip'].forEach(g => {
     document.getElementById('gate-' + g).classList.toggle('active', gate === g);
     document.getElementById('tb-' + g).classList.toggle('active', gate === g);
   });
